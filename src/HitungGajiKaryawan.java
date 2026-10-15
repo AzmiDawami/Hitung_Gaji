@@ -11,7 +11,7 @@ public class HitungGajiKaryawan {
         DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.of("id", "ID"));
         symbols.setGroupingSeparator('.');
         symbols.setDecimalSeparator(',');
-        DecimalFormat kursIndo = new DecimalFormat("#,###", symbols);
+        DecimalFormat formatTigaDigit = new DecimalFormat("#,###", symbols);
 
         // Deklarasi variabel untuk input golongan dan jam lembur
         char golongan = ' ';
@@ -96,11 +96,11 @@ public class HitungGajiKaryawan {
         System.out.println("         RINCIAN PENGHASILAN            ");
         System.out.println("----------------------------------------");
         System.out.println("Golongan         : " + golongan);
-        System.out.println("Gaji Pokok       : Rp " + kursIndo.format(gajiPokok));
+        System.out.println("Gaji Pokok       : Rp " + formatTigaDigit.format(gajiPokok));
         System.out.println("Jam Lembur       : " + jamLembur + " Jam");
-        System.out.println("Gaji Lembur      : Rp " + kursIndo.format(gajiLembur));
+        System.out.println("Gaji Lembur      : Rp " + formatTigaDigit.format(gajiLembur));
         System.out.println("----------------------------------------");
-        System.out.println("Total Penghasilan: Rp " + kursIndo.format(totalPenghasilan));
+        System.out.println("Total Penghasilan: Rp " + formatTigaDigit.format(totalPenghasilan));
         System.out.println("----------------------------------------");
 
         input.close();
